@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVC_ImageViewer
 // @namespace    http://tampermonkey.net/
-// @version      2.0.9
+// @version      2.1.0
 // @description  Naviguer entre les images d'un post sous forme de slideshow en cliquant sur une image sans ouvrir NoelShack.
 // @author       HulkDu92
 // @match        https://*.jeuxvideo.com/forums/*
@@ -1775,7 +1775,8 @@ class StyleInjector {
         .previsu-editor,
         .bloc-description-desc.txt-enrichi-desc-profil,
         .bloc-signature-desc.txt-enrichi-desc-profil,
-        .message__noBlankline,
+        .messageUser__signature,
+        .messageUser__msg,
         .message-content,
         .messageEditor__containerPreview
     `.replace(/\s+/g, ''); // Supprimer les sauts de ligne et espaces inutiles
@@ -1786,6 +1787,7 @@ class StyleInjector {
     function addListeners() {
         linkSelectors.forEach(selector => {
             document.querySelectorAll(selector).forEach(link => {
+                link.removeEventListener('click', handleImageClick, true);
                 link.addEventListener('click', handleImageClick, true);
             });
         });
@@ -1802,7 +1804,7 @@ class StyleInjector {
             event.preventDefault();
             const closestElement = this.closest(parentClasses);
             if (closestElement) {
-                const images = Array.from(closestElement.querySelectorAll('a')).filter(imgLink => imgLink.querySelector('img'));
+                const images = [...closestElement.querySelectorAll('a')].filter(imgLink => imgLink.querySelector('img'));
                 const currentIndex = images.indexOf(this);
 
                 const viewer = new ImageViewer();
