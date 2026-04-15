@@ -1,3 +1,8 @@
+1. **Installer le Userscript :**
+
+# [=> Installer](https://github.com/Lantea-Git/jvc-image-viewer/raw/main/JVC_ImageViewer.user.js) 
+
+
 # JVC ImageViewer
 
 [![Users](https://img.shields.io/badge/Users-300+-blue?style=for-the-badge)](https://jvscript.fr/script/jvc-imageviewer)
@@ -25,20 +30,7 @@ Expérience utilisateur améliorée: Plus de redirections intempestives vers No�
 
 Ce userscript améliore votre navigation sur Jeuxvideo.com en empêchant les redirections indésirables vers NoëlShack lorsque vous cliquez sur une image. Au lieu de vous emmener sur une nouvelle page, l'image s'affiche dans une élégante popup directement sur la page actuelle, vous permettant de rester immergé dans la discussion. Naviguez entre les images d'un même message sans jamais quitter la pag
 
-**Installation :**
 
-1. **Obtenir un gestionnaire de Userscripts :** Vous aurez besoin d'un gestionnaire de userscripts pour installer et exécuter le script. Voici quelques options populaires :
-
-    * **Chrome/Edge :** [Tampermonkey](https://www.tampermonkey.net/)
-    * **Firefox :** [Violentmonkey](https://violentmonkey.github.io/) ou [Tampermonkey](https://www.tampermonkey.net/)
-    * **Autres navigateurs :** Recherchez un gestionnaire de userscripts compatible dans la boutique d'extensions de votre navigateur.
-
-2. **Installer le Userscript :**
-
-    Cliquez sur le bouton "Installer" ci-dessous (ou copiez le code brut depuis [userscript/jvc-image-viewer.user.js](userscript/jvc-image-viewer.user.js)). Cela devrait ouvrir automatiquement votre gestionnaire de userscripts.
-
-
-    [![Installer le Userscript](https://img.shields.io/badge/Installer%20le%20Userscript-Cliquez%20ici-brightgreen?style=for-the-badge&logo=tampermonkey)](https://greasyfork.org/scripts/508447/code/jvc-imageviewer.user.js)
 
 
 3. **Activer le script :** Assurez-vous que le script est activé dans votre gestionnaire de userscripts. C'est tout ! Rendez-vous sur jeuxvideo.com (ou le forum cible) et profitez des images taille réelle sans NoelShack !
