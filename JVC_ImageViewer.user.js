@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         JVC_ImageViewer
 // @namespace    http://tampermonkey.net/
-// @version      2.1.0
+// @version      2.1.1
 // @description  Naviguer entre les images d'un post sous forme de slideshow en cliquant sur une image sans ouvrir NoelShack.
 // @author       HulkDu92
 // @match        https://*.jeuxvideo.com/forums/*
 // @match        https://*.jeuxvideo.com/profil/*
 // @match        https://*.jeuxvideo.com/messages-prives/*
-// @match        https://jvarchive.com/*
-// @match        https://jvarchive.st/*
+// @match        https://jvarchive.net/*
+// @match        https://jvarchive.top/*
 // @require      https://cdn.jsdelivr.net/npm/panzoom@9.4.3/dist/panzoom.min.js
 // @grant        GM_download
 // @grant        GM.xmlHttpRequest
@@ -1592,7 +1592,7 @@
       closeViewer() {
           if (this.overlay) {
               this.handleCloseViewer(); // Ferme le visualiseur
-              history.back(); // Supprime l'état ajouté par pushState
+              history.replaceState(null, ''); // Supprime l'état ajouté par pushState sans impact sur la nouvelle SPA
           }
       }
 
@@ -1799,12 +1799,12 @@ class StyleInjector {
             return;
         }
 
-        const imgElement = this.querySelector('img');
+        const imgElement = this.querySelector('img, span.message__urlImgLarge');
         if (imgElement) {
             event.preventDefault();
             const closestElement = this.closest(parentClasses);
             if (closestElement) {
-                const images = [...closestElement.querySelectorAll('a')].filter(imgLink => imgLink.querySelector('img'));
+                const images = [...closestElement.querySelectorAll('a')].filter(imgLink => imgLink.querySelector('img, span.message__urlImgLarge'));
                 const currentIndex = images.indexOf(this);
 
                 const viewer = new ImageViewer();
