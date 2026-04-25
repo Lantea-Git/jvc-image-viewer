@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVC_ImageViewer
 // @namespace    http://tampermonkey.net/
-// @version      2.1.1
+// @version      2.1.2
 // @description  Naviguer entre les images d'un post sous forme de slideshow en cliquant sur une image sans ouvrir NoelShack.
 // @author       HulkDu92
 // @match        https://*.jeuxvideo.com/forums/*
@@ -16,8 +16,8 @@
 // @run-at       document-end
 // @license      MIT
 // @icon         https://image.noelshack.com/fichiers/2024/41/3/1728506420-image-viewer-icon.png
-// @downloadURL  https://github.com/Lantea-Git/jvc-image-viewer/raw/main/JVC_ImageViewer.user.js
-// @updateURL    https://github.com/Lantea-Git/jvc-image-viewer/raw/main/JVC_ImageViewer.user.js
+// @downloadURL  https://raw.githubusercontent.com/Lantea-Git/jvc-image-viewer/main/JVC_ImageViewer.user.js
+// @updateURL    https://raw.githubusercontent.com/Lantea-Git/jvc-image-viewer/main/JVC_ImageViewer.user.js
 // ==/UserScript==
 
 (function() {
