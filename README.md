@@ -5,6 +5,12 @@
 Debug temporaire de [JVC ImageViewer](https://greasyfork.org/fr/scripts/508447-jvc-imageviewer/code) pour le nouveau jvc .   
 ChangeLog exact depuis la [dernière version officielle](https://github.com/Lantea-Git/jvc-image-viewer/compare/c727caba88698dc6ce6aec3bc58c7e271c18f809...04d3f53859fd5654a7f5530b7d058ca107bdb547) (2.0.9)
 
+
+
+La description **après** cette ligne est d'origine et inchangée.   
+
+---------------------
+
 # JVC ImageViewer
 
 [![Users](https://img.shields.io/badge/Users-300+-blue?style=for-the-badge)](https://jvscript.fr/script/jvc-imageviewer)
