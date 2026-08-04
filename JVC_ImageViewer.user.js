@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVC_ImageViewer
 // @namespace    http://tampermonkey.net/
-// @version      2.1.2
+// @version      2.1.3
 // @description  Naviguer entre les images d'un post sous forme de slideshow en cliquant sur une image sans ouvrir NoelShack.
 // @author       HulkDu92
 // @match        https://*.jeuxvideo.com/forums/*
@@ -1783,14 +1783,14 @@ class StyleInjector {
 
     const linkSelectors = parentClasses.split(',').map(cls => `${cls} a`);
 
-    // Ajouter des écouteurs d'événements aux images sur la page
-    function addListeners() {
-        linkSelectors.forEach(selector => {
-            document.querySelectorAll(selector).forEach(link => {
-                link.removeEventListener('click', handleImageClick, true);
-                link.addEventListener('click', handleImageClick, true);
-            });
-        });
+    // Ajout d'un listener global avec délégation d'événements scopé via linkSelectors
+    function addListener() {
+        document.body.addEventListener('click', (event) => {
+            const link = event.target.closest(linkSelectors.join(','));
+            if (link) {
+                handleImageClick.call(link, event); //Transfert du this et event à la fonction
+            }
+        }, true);
     }
 
     function handleImageClick(event) {
@@ -1822,30 +1822,10 @@ class StyleInjector {
         return match ? match[0].toLowerCase() : null;
     }
 
-    // Observer les changements dans le DOM
-    function observeDOMChanges() {
-        const observer = new MutationObserver(() => addListeners());
-        observer.observe(document, { childList: true, subtree: true });
-    }
-
-    // Détection des changements d'URL
-    function observeURLChanges() {
-        let lastUrl = window.location.href;
-
-        const urlObserver = new MutationObserver(() => {
-            if (lastUrl !== window.location.href) {
-                lastUrl = window.location.href;
-                addListeners();
-            }
-        });
-        urlObserver.observe(document, { subtree: true, childList: true });
-    }
 
     function main() {
         injectStyles();
-        addListeners();
-        observeDOMChanges();
-        observeURLChanges();
+        addListener();
     }
 
     main();
