@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVC_ImageViewer
 // @namespace    http://tampermonkey.net/
-// @version      2.1.4
+// @version      2.1.5
 // @description  Naviguer entre les images d'un post sous forme de slideshow en cliquant sur une image sans ouvrir NoelShack.
 // @author       HulkDu92
 // @match        https://*.jeuxvideo.com/forums/*
@@ -9,6 +9,7 @@
 // @match        https://*.jeuxvideo.com/messages-prives/*
 // @match        https://jvarchive.net/*
 // @match        https://jvarchive.top/*
+// @match        https://jvarchive.com/*
 // @require      https://cdn.jsdelivr.net/npm/panzoom@9.4.3/dist/panzoom.min.js
 // @grant        GM_download
 // @grant        GM.xmlHttpRequest
