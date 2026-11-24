@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVC_ImageViewer
 // @namespace    http://tampermonkey.net/
-// @version      2.1.5
+// @version      2.1.6
 // @description  Naviguer entre les images d'un post sous forme de slideshow en cliquant sur une image sans ouvrir NoelShack.
 // @author       HulkDu92
 // @match        https://*.jeuxvideo.com/forums/*
@@ -330,8 +330,8 @@
          this.imgContainer = this.createElement('div', {
                 maxWidth: '90%',
                 maxHeight: '80%',
-          //      width: 'auto',  // Important: Allow width to adjust to content
-           //     height: 'auto', // Important: Allow height to adjust to content
+                // width: 'auto',  // Important: Allow width to adjust to content
+                // height: 'auto', // Important: Allow height to adjust to content
                 display: 'flex', // Ensure flex layout to center the image
                 justifyContent: 'center', // Horizontally center
                 alignItems: 'center',     // Vertically center
@@ -379,7 +379,8 @@
           // Conteneur pour les boutons de manipulation d'image
           const imageControlsContainer = this.createElement('div', {
               position: 'absolute',
-              top: '80px',  // Ajuster la position verticale si nécessaire
+              top: '110px',  // Ajuster la position verticale si nécessaire
+              // top: '80px',  // // Ancien header 2022-2026
               right: '20px',
               display: 'flex',
               alignItems: 'center',
@@ -1095,7 +1096,8 @@
 
                    requestAnimationFrame(() => {  // Ensures layout is calculated
                       this.imgContainer.style.maxWidth = '90%';
-                      this.imgContainer.style.maxHeight = '80%';
+                      this.imgContainer.style.maxHeight = '70%';
+                      // this.imgContainer.style.maxHeight = '80%'; // Ancien header 2022-2026
                       this.imgElement.style.objectFit = 'contain';
 
                       // Set the zoom utils
